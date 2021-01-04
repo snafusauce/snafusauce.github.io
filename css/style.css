@@ -36,6 +36,10 @@
 }
 
 /* GENERAL STYLES*/
+html{
+    scroll-behavior: smooth;
+}
+
 body{
     background: var(--clr-light);
     color: var(--clr-dark);
@@ -137,7 +141,7 @@ header {
     right: 0;
     z-index: 100;
     
-    transform: translateX(100%);
+    transform: translateX(99%);
     transition: transform 250ms cubic-bezier(.5, 0, .5, 1);
 }
 
@@ -162,21 +166,62 @@ header {
 .nav__link:hover {
     color: var(--clr-accent);
 }
+.nav-toggle{
+    padding: .5em;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    position: absolute;
+    right: 1em;
+    top: 1em;
+    z-index: 1000;
+}
+
+.nav-open .nav{
+    transform: translateX(0) ;
+}
+
+.nav-open .nav-toggle{
+    position: fixed;
+}
+
+.nav-open .hamburger{
+    transform: rotate(.625turn);
+}
+
+.nav-open .hamburger::before{
+    transform: rotate(90deg) translateX(-6px);
+}
+
+.nav-open .hamburger::after{
+    opacity: 0;
+}
 
 .hamburger {
-    background: var(--clr-dark);
+    display: block;
+    position: relative;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+    background: var(--clr-accent);
     width: 2em;
     height: 3px;
     border-radius: 1em;
-    display: block;
-    position: relative;
+    transition: transform 250ms ease-in-out;
 }
 
 .hamburger::before,
 .hamburger::after {
     content: '';
     position: absolute;
+    left: 0;
+    right: 0;
 }
+
+.hamburger::before{top: 6px;}
+.hamburger::after{bottom: 6px;}
 
 /* INTRO SECTION */
 
@@ -220,6 +265,8 @@ header {
         position:relative;
         left: -1.5em;
         width: calc(100% + 1.5em);
+        color: var(--clr-light);
+        
     }
 }
 
@@ -304,6 +351,7 @@ header {
         width: calc(100% + 2em);
         padding-left: 1em;
         padding-right: calc(200px + 4em);
+        color: var(--clr-light);
 
     }
     .about--me__img{
@@ -399,4 +447,17 @@ header {
 
 .social-list__link{
     padding: .5em;
+}
+
+/*INDIVIDUAL PORTFOLIO ITEMS */
+.portfolio-item-individual {
+    padding: 0 2em 2em;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.portfolio-item-individual p {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
