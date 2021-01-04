@@ -15,14 +15,16 @@ var textAnimated = document.querySelector(".animated_text")
 
 var text = ""
 var textArr = [
-  "I'm a tech professional",
+  "I'm a tech professional.",
   "A first-gen college graduate.",
   "A US Marine Corps Veteran.",
-  "Diversity Advocate."
+  "Diversity Advocate.",
+  "Passionate."
 ]
 
 var letterIndex = -1
 var currentTextIndex = -1
+
 
 function addLetter(){
   // increment letterIndex to get to the next letter
@@ -36,7 +38,7 @@ function addLetter(){
       // call itself 
       addLetter()
     }, 100)
-  }else{
+  }else if (currentTextIndex != 4){
     setTimeout(function(){
       removeLetter()
     }, 2000)
@@ -64,9 +66,9 @@ function updateText(){
   currentTextIndex++
 
   //go to the first string index when currenttextindex has reached the end
-  if(currentTextIndex == textArr.length){
-    currentTextIndex = 0
-  }
+  //if(currentTextIndex == textArr.length){
+    //currentTextIndex = 0
+  //}
   //update text
   text = textArr[currentTextIndex]
   //call the function!
@@ -74,7 +76,4 @@ function updateText(){
 }
 //cool stuff
 updateText()
-
-
-
 //
