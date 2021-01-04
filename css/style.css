@@ -100,6 +100,7 @@ h3{font-size: var(--fs-h3);}
 
 .section__title--intro{
     font-weight: var(--fw-reg);
+    margin-left: .3em;
 }
 
 .section__title--intro strong {
@@ -263,8 +264,8 @@ header {
         grid-row: 2;
         text-align: right;
         position:relative;
-        left: -1.5em;
-        width: calc(100% + 1.5em);
+        left: -3.5em;
+        width: calc(100% + 3.5em);
         color: var(--clr-light);
         
     }
