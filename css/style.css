@@ -142,7 +142,7 @@ header {
     right: 0;
     z-index: 100;
     
-    transform: translateX(99%);
+    transform: translateX(100%);
     transition: transform 250ms cubic-bezier(.5, 0, .5, 1);
 }
 
@@ -247,7 +247,7 @@ header {
         grid-template-areas:
             "img title" 
             "img subtitle";
-        grid-template-columns: min-content max-content;
+        grid-template-columns: min-content 25em;
     }
 
 
@@ -461,4 +461,27 @@ header {
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
+}
+
+/*this is the typing paragraph */
+
+.animated_text::after{
+  content: "|";
+  margin-left: 0.2em;
+  animation: blinkCursor 1.2s linear infinite;
+}
+
+@keyframes blinkCursor {
+    0% {
+        opacity: 1;
+    }
+    49% {
+        opacity: 1;
+    }
+    50%{
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
 }
