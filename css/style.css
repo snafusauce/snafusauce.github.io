@@ -138,7 +138,7 @@ header {
     color: var(--clr-light);
     top: 0;
     bottom: 0;
-    left: 0;
+    left: 60em;
     right: 0;
     z-index: 100;
     
@@ -298,11 +298,11 @@ header {
 }
 
 .services {
-    margin-bottom: 3em;
+    margin-bottom: 2em;
 }
 
 .service {
-    max-width: 500px;
+    max-width: 300px;
     margin: 0 auto;
 }
 
